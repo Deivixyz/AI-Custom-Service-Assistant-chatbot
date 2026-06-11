@@ -1,0 +1,123 @@
+/* =============================================
+   DESIGN TOKENS (puedes moverlos a index.css)
+   ============================================= */
+:root {
+  /* Paleta: dark editorial con acento ámbar */
+  --color-bg:           #0d0d0f;
+  --color-surface:      #16161a;
+  --color-surface-2:    #1e1e24;
+  --color-border:       #2a2a33;
+  --color-text:         #e8e8ec;
+  --color-text-muted:   #6b6b7a;
+  --color-accent:       #e8a838;
+  --color-accent-dim:   #4a3510;
+  --color-accent-hover: #f0b84a;
+  --color-accent-glow:  rgba(232, 168, 56, 0.12);
+
+  /* Tipografía */
+  --font-body: "DM Sans", "Helvetica Neue", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* Layout */
+  --chat-max-width: 860px;
+  --chat-height:    680px;
+}
+
+/* =============================================
+   CHAT WINDOW
+   ============================================= */
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--chat-max-width);
+  height: var(--chat-height);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  overflow: hidden;
+
+  /* Sombra editorial */
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    0 24px 64px rgba(0, 0, 0, 0.6),
+    0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* =============================================
+   HEADER
+   ============================================= */
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.chat-header__identity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat-header__status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-dim);
+  animation: statusPulse 2.5s ease-in-out infinite;
+}
+
+.chat-header__title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.chat-header__clear {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.chat-header__clear:hover:not(:disabled) {
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.chat-header__clear:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+/* =============================================
+   DIVIDER
+   ============================================= */
+.chat-divider {
+  height: 1px;
+  background: var(--color-border);
+  flex-shrink: 0;
+}
+
+/* =============================================
+   ANIMACIONES GLOBALES
+   ============================================= */
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
