@@ -4,17 +4,6 @@ A customer service chatbot built with **React + TypeScript** on the frontend and
 
 ---
 
-## 🧰 Tech Stack
-
-| Layer     | Technology                        |
-|-----------|-----------------------------------|
-| Frontend  | React, TypeScript, Vite           |
-| Backend   | FastAPI, Python                   |
-| AI Model  | Google Gemini 2.0 Flash Lite      |
-| Styling   | CSS Modules (custom design system)|
-
----
-
 ## 📁 Project Structure
 
 ```
